@@ -47,6 +47,10 @@ SELECT SUM(quantity) FROM orders;
 ```
 
 ##### How much was spent on books?
+1081352
+```
+SELECT SUM(price*quantity) FROM orders JOIN items ON orders.item_id = items.id WHERE category LIKE "%Books%";
+```
 
 ##### Simulate buying an item by inserting a User for yourself and an Order for that User.
 
