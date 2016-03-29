@@ -17,6 +17,10 @@ SELECT title FROM items ORDER BY price DESC LIMIT 5;
 ```
 
 ####What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)
+Ergonomic Granite Chair
+```
+SELECT title FROM items WHERE category IS "Books" ORDER BY price ASC LIMIT 1;
+```
 
 ####Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?
 
