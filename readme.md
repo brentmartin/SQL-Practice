@@ -23,9 +23,14 @@ SELECT title FROM items WHERE category IS "Books" ORDER BY price ASC LIMIT 1;
 ```
 
 ##### Who lives at "6439 Zetta Hills, Willmouth, WY"? Do they have another address?
-Kyra Kilback, no other address
+Corrine Little
 ```
-SELECT first_name, last_name FROM addresses JOIN users ON addresses.id = users.id WHERE street IS "6439 Zetta Hills";
+SELECT first_name, last_name FROM users JOIN addresses ON users.id = addresses.user_id WHERE street = "6439 Zetta Hills";
+```
+6439 Zetta Hills  Willmouth  WY    15029
+54369 Wolff Forges  Lake Bryon  CA    31587
+```
+SELECT * FROM addresses WHERE user_id = (SELECT user_id FROM addresses WHERE street = "6439 Zetta Hills" AND state = "WY");
 ```
 
 ##### Correct Virginie Mitchell's address to "New York, NY, 10108".
