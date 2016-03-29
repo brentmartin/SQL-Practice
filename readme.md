@@ -35,6 +35,10 @@ UPDATE addresses SET city = "New York", state = "NY", zip = "10108" WHERE id IS 
 ```
 
 ##### How much would it cost to buy one of each tool?
+46477
+```
+SELECT SUM(price) FROM items WHERE category LIKE "%Tools%";
+```
 
 ##### How many total items did we sell?
 
