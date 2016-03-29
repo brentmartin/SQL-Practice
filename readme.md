@@ -41,6 +41,10 @@ SELECT SUM(price) FROM items WHERE category LIKE "%Tools%";
 ```
 
 ##### How many total items did we sell?
+2125
+```
+SELECT SUM(quantity) FROM orders;
+```
 
 ##### How much was spent on books?
 
