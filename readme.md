@@ -53,7 +53,18 @@ SELECT SUM(price*quantity) FROM orders JOIN items ON orders.item_id = items.id W
 ```
 
 ##### Simulate buying an item by inserting a User for yourself and an Order for that User.
-
+Created a new user
+```
+INSERT INTO users (first_name, last_name, email) VALUES ("Brent", "Martin", "bmart35@gmail.com");
+```
+Entered new users address
+```
+INSERT INTO addresses (user_id, street, city, state, zip) VALUES ((SELECT MAX(id) FROM users), "2222 Liveoak", "Austin", "TX", "78744");
+```
+Ordered item through new user
+```
+INSERT INTO orders (user_id, item, quantity, created_at) VALUES ((SELECT MAX(id) FROM users), "4", "1", (DATETIME('now')))
+```
 
 ##Adventurer Mode
 ##### What item was ordered most often? Grossed the most money?
